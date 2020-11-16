@@ -83,6 +83,26 @@
 #define E1_STEP_PIN                         PA6
 #define E1_DIR_PIN                          PA1
 
+#if HAS_TMC_UART
+  //#define X_SERIAL_TX_PIN  PE6
+  //#define X_SERIAL_RX_PIN  PE6
+
+  //#define Y_SERIAL_TX_PIN  PA9
+  //#define Y_SERIAL_RX_PIN  PA9
+
+  #define Z_SERIAL_TX_PIN  PC7
+  #define Z_SERIAL_RX_PIN  PC7
+
+  #define E0_SERIAL_TX_PIN PA9
+  #define E0_SERIAL_RX_PIN PA9
+
+  #define E1_SERIAL_TX_PIN PC13
+  #define E1_SERIAL_TX_PIN PC13
+
+  #define TMC_BAUD_RATE 19200
+#endif //TMC2208, TMC2209
+
+
 //
 // Temperature Sensors
 //
@@ -127,21 +147,21 @@
     #define SUICIDE_PIN                     PB2   // Enable MKSPWC SUICIDE PIN
     #define SUICIDE_PIN_INVERTING          false  // Enable MKSPWC PIN STATE
     #define KILL_PIN                        PA2   // Enable MKSPWC DET PIN
-    #define KILL_PIN_STATE                  true  // Enable MKSPWC PIN STATE
+    #define KILL_PIN_STATE                 false  // Enable MKSPWC PIN STATE
   #endif
 
   #define MT_DET_1_PIN                      PA4   // LVGL UI FILAMENT RUNOUT1 PIN
-  #define MT_DET_2_PIN                      PE6   // LVGL UI FILAMENT RUNOUT2 PIN
-  #define MT_DET_PIN_INVERTING             false  // LVGL UI filament RUNOUT PIN STATE
+  //#define MT_DET_2_PIN                    PE6   // LVGL UI FILAMENT RUNOUT2 PIN
+  #define MT_DET_PIN_INVERTING             true   // LVGL UI filament RUNOUT PIN STATE
 
-  #define WIFI_IO0_PIN                      PC13  // MKS ESP WIFI IO0 PIN
-  #define WIFI_IO1_PIN                      PC7   // MKS ESP WIFI IO1 PIN
-  #define WIFI_RESET_PIN                    PA5   // MKS ESP WIFI RESET PIN
+  //#define WIFI_IO0_PIN                    PC13  // MKS ESP WIFI IO0 PIN
+  //#define WIFI_IO1_PIN                    PC7   // MKS ESP WIFI IO1 PIN
+  //#define WIFI_RESET_PIN                  PA5   // MKS ESP WIFI RESET PIN
 #else
-  //#define POWER_LOSS_PIN                  PA2   // PW_DET
-  //#define PS_ON_PIN                       PB2   // PW_OFF
+  #define POWER_LOSS_PIN                    PA2   // PW_DET
+  #define PS_ON_PIN                         PB2   // PW_OFF
   #define FIL_RUNOUT_PIN                    PA4
-  #define FIL_RUNOUT2_PIN                   PE6
+  //#define FIL_RUNOUT2_PIN                   PE6
 #endif
 
 #define SERVO0_PIN                          PA8   // Enable BLTOUCH support
