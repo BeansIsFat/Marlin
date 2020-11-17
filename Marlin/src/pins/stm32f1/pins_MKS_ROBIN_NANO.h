@@ -96,8 +96,8 @@
   #define E0_SERIAL_TX_PIN PA9
   #define E0_SERIAL_RX_PIN PA9
 
-  #define E1_SERIAL_TX_PIN PC13
-  #define E1_SERIAL_TX_PIN PC13
+  #define Z2_SERIAL_TX_PIN PC13
+  #define Z2_SERIAL_RX_PIN PC13
 
   #define TMC_BAUD_RATE 19200
 #endif //TMC2208, TMC2209
